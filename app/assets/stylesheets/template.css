@@ -174,9 +174,9 @@ input, select, textarea, .inputbox, .button {
 	font-family: Tahoma, Arial, sans-serif;
 	font-size: 100%;
         border: 2px solid #456879;
-border-radius: 10px;
-height: 22px;
-width: 500px;
+        border-radius: 10px;
+        height: 22px;
+        width: 500px;
 }
 
 .inputbox {
@@ -196,11 +196,11 @@ width: 500px;
 }
 
 * html .button { /*IE 6*/
-	padding: 0 5px !important;
+	padding: 0 5px ;
 }
 
 *+html .button { /*IE 7*/
-	padding: 0 5px !important;
+	padding: 0 5px  ;
 }
 
 /* JOOMLA STYLE
@@ -291,7 +291,7 @@ table.pollstableborder img {
 table.pollstableborder td {
 	border-collapse: collapse;
 	border-spacing: 0;
-	padding: 4px !important;
+	padding: 4px  ;
 	background: none;
 }
 
@@ -305,7 +305,7 @@ table.searchintro {
 }
 
 table.searchintro td {
-	padding: 5px!important;
+	padding: 5px ;
 }
 
 .blog_more strong {
@@ -666,7 +666,7 @@ div.moduletable_hilite h3, div.moduletable_hilite a {
 
 /* mis */
 div.banneritem_text {
-	padding: 5px 0 !important;
+	padding: 5px 0  ;
 }
 
 div.advs {
@@ -821,7 +821,7 @@ p.site-slogan {
 
 #ja-pathway strong {
 	margin-right: 5px;
-	background: url(../images/symbol.gif) no-repeat 2px center #E7E6DF;
+/*	background: url(../images/symbol.gif) no-repeat 2px center #E7E6DF;*/
 	padding: 5px 5px 5px 31px;
 	
 }
@@ -884,10 +884,10 @@ ul.menu li li {
 }
 
 ul.menu li li a {
-	background: url(../images/arrow.png) no-repeat 10px 11px !important;
+	background: url(../images/arrow.png) no-repeat 10px 11px  ;
 	border: none;
-	font-weight: normal !important;
-	padding-left: 20px !important;
+	font-weight: normal  ;
+	padding-left: 20px  ;
 	width: 75%; /*need for ie6*/
 }
 
@@ -915,7 +915,7 @@ ul.menu li li a:focus {
 #ja-topslwrap {
 	padding:0px;
 	margin:0px;	
-	width:1007px !important;
+	width:1007px  ;
 	width:1003px;
 	height:150px;
 /*	color: #FFFFFF;
@@ -1025,7 +1025,7 @@ ul.menu li li a:focus {
 }
 
 li.ja-firstitem {
-	background: none !important;
+	background: none  ;
 }
 
 .ja-footurl {
@@ -1075,10 +1075,10 @@ ul.accessibility {
 div.back_button a,
 div.back_button a:hover,
 div.back_button a:active {
-	background: none!important;
+	background: none ;
 	display: block;
 	margin: 10px 0;
-	text-decoration: none!important;
+	text-decoration: none ;
 }
 
 .clr {
@@ -1124,8 +1124,8 @@ div.ja-innerdiv img {
 }
 
 .ja-hp-active {
-	color: #3C3229 !important;
-	background: url(../images/hpanel-bg.png) no-repeat bottom !important;
+	color: #3C3229  ;
+	background: url(../images/hpanel-bg.png) no-repeat bottom  ;
 }
 
 #ja-hpwrap {

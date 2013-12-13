@@ -38,7 +38,7 @@ blockquote.testimonial {
 }
 
 blockquote.testimonial span.author {
-	background: url(../images/icon-author.gif) no-repeat 5px center;
+/*	background: url(../images/icon-author.gif) no-repeat 5px center;*/
 	display: block;
 	font-weight: bold;
 	margin-top: 5px;
@@ -81,13 +81,13 @@ p.tips {
 
 /* Note Style */
 p.stickynote {
-	background: url(../images/sticky-bg.gif) no-repeat 10px center #FFFFFF;
+/*	background: url(../images/sticky-bg.gif) no-repeat 10px center #FFFFFF;*/
 	border: 1px solid #C9C0B7;
 	padding: 10px 10px 10px 60px;
 }
 
 p.download {
-	background: url(../images/download-bg.gif) no-repeat 10px center #FFFFFF;
+/*	background: url(../images/download-bg.gif) no-repeat 10px center #FFFFFF;*/
 	border: 1px solid #C9C0B7;
 	padding: 10px 10px 10px 60px;
 }
