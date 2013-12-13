@@ -14,7 +14,7 @@
 {
 	margin:0px;
 	padding:0px;
-	text-align:justify;!important
+	text-align:justify;
 }
 #position
 {
@@ -924,7 +924,7 @@ ul.menu li li a:focus {
 
 #ja-topsl {
 	color: #000000;
-//*	position: relative; */
+/*	position: relative; */
 	height:150px;
 	margin:0px;
 	padding:0px;
