@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @panel_member.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @panel_member.email %>
+</p>
+
+<p>
+  <b>Designation:</b>
+  <%= @panel_member.designation %>
+</p>
+
+<p>
+  <b>Membershipno:</b>
+  <%= @panel_member.membershipno %>
+</p>
+
+<p>
+  <b>Contactno:</b>
+  <%= @panel_member.contactno %>
+</p>
+
+<p>
+  <b>Detail:</b>
+  <%= @panel_member.detail %>
+</p>
+
+
+<%= link_to 'Edit', edit_panel_member_path(@panel_member) %> |
+<%= link_to 'Back', panel_members_path %>

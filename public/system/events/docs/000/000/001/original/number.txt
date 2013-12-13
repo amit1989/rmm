@@ -1,0 +1,6 @@
+9890110527... siddhan4214582810019407
+
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\user\.android\debug.keystore"| "C:\openSSL\bin\openssl" sha1 -binary |"C:\openSSL\bin\openssl" base64
+USe9F8QqWva4Z6tCTbPoVpRdKrI=
+
+6220180315000119307

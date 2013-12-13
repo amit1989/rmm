@@ -1,0 +1,108 @@
+<style>
+  .tabl{
+
+    background-color: #e0b153;
+    box-shadow: 10px 10px 5px #888888;
+    margin-left:   150px;
+    margin-right: 150px;
+    padding-left: 83px;
+  }
+</style>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css" />
+<div class="tabl"  >
+  <h1 style="font-size: large;color: darkmagenta">कार्यक्रम यादी</h1>
+
+  <table class="jtable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= image_tag('new.gif', :size => '40x40') if date_diff_valid(event) == true %></td>
+          <td><%= event.date %></td>
+          <td><%= event.detail %></td>
+  <%#debugger%>
+          <%if event.doc.url != "/docs/original/missing.png" %>
+
+            <td><%= link_to 'Download Document',  event.doc.url  %></td>
+          <%end%>
+  <%#= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br />
+
+<div class="tabl"  >
+  <h1  style="font-size: large;color: darkmagenta" >Listing documents</h1>
+  <table class="jtable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Date</th>
+        <th>Detail</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <%@documents = Document.all%>
+      <% @documents.each do |document| %>
+        <tr>
+          <td><%= image_tag('new.gif', :size => '40x40') if date_diff_valid(document) == true %></td>
+          <td><%= document.date %></td>
+          <td><%= document.detail %></td>
+          <td><%= link_to 'Show', document %></td>
+          <%#if document.doc.url != "/docs/original/missing.png" %>
+
+            <td><%= link_to 'View Document',  document.file_link , :target => "_blank" %></td>
+          <%#end%>
+  <%#= link_to 'Destroy', document, confirm: 'Are you sure?', method: :delete %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br />
+
+<%#= link_to 'New Document', new_document_path %>
+
+<script type="text/javascript">
+
+  $().ready(function(){
+    $(".jtable th").each(function(){
+
+      $(this).addClass("ui-state-default");
+
+    });
+    $(".jtable td").each(function(){
+
+      $(this).addClass("ui-widget-content");
+
+    });
+    $(".jtable tr").hover(
+    function()
+    {
+      $(this).children("td").addClass("ui-state-hover");
+    },
+    function()
+    {
+      $(this).children("td").removeClass("ui-state-hover");
+    }
+  );
+    $(".jtable tr").click(function(){
+
+      $(this).children("td").toggleClass("ui-state-highlight");
+    });
+
+  });
+</script>
+
+<%#= link_to 'New Event', new_event_path %>

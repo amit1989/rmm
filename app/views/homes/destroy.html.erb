@@ -1,0 +1,106 @@
+
+<script type="text/javascript">
+
+  $().ready(function(){
+    $(".jtable th").each(function(){
+
+      $(this).addClass("ui-state-default");
+
+    });
+    $(".jtable td").each(function(){
+
+      $(this).addClass("ui-widget-content");
+
+    });
+    $(".jtable tr").hover(
+    function()
+    {
+      $(this).children("td").addClass("ui-state-hover");
+    },
+    function()
+    {
+      $(this).children("td").removeClass("ui-state-hover");
+    }
+  );
+    $(".jtable tr").click(function(){
+
+      $(this).children("td").toggleClass("ui-state-highlight");
+    });
+
+  });
+</script>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css" />
+<br/>
+Delete Events
+<table class="jtable">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Date</th>
+      <th>Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= image_tag('new.gif', :size => '40x40') if date_diff_valid(event) == true %></td>
+        <td><%= event.date %></td>
+        <td><%= event.detail %></td>
+
+
+        <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table><br/>
+<br/>
+Delete Document
+
+<table class="jtable">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Detail</th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.date %></td>
+        <td><%= document.detail %></td>
+        <td><%= link_to 'Destroy', document, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/><br/>
+Delete Member
+
+<table  class="jtable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Contactno</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.designation %></td>
+        <td><%= user.contactno %></td>
+        <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<a href="/admin" class="menu-itemm" id="menu53" title="events" id="menu80" title="Events"><span class="menu-title">Back</span></a>

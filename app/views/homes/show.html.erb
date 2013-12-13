@@ -1,0 +1,58 @@
+
+
+
+<%#= link_to 'Edit', edit_home_path(@home) %> |
+<%#= link_to 'Back', homes_path %>
+<table border="1px">
+  <th><h2><%= link_to 'Add Event', new_event_path %> </h2></th>
+  <th><h2><%= link_to 'Add Document', new_document_path %></h2></th>
+  <th><h2><%= link_to 'Add  Donor name', new_donation_path %></h2></th>
+  <th><h2><%= link_to 'Add pictures', 'http://www.flickr.com/photos/111235303@N04/' %></h2></th>
+
+<th><h2><%= link_to 'Add member', new_user_path %></h2></th>
+<th><h2><a href="/admin/delete" class="menu-itemm" id="menu53" title="events" id="menu80" title="Events"><span class="menu-title" style="color: red">DELETE FEATURE</span></a></h2></th>
+</table>
+<h2>EDIT PANEL</h2>
+
+
+<div border:2px>
+<%@panels = Panel.all%>
+<div id="container">
+
+  <div id="box-left"><h2 style="margin-left: 40px">current-adhyaksh</h2> <br/><div style="margin-left: 50px"><%= image_tag @panels[0].photo.url , :size => '40x40'%>Name: <%= @panels[0].name %></div><br/><%= link_to 'Change', edit_panel_path( @panels[0]) %></div>&nbsp;
+
+  <div id="box-right" ><h2  style="margin-left: 40px">karya-adhyaksh</h2><br/><div style="margin-left: 50px"><%= image_tag @panels[1].photo.url , :size => '40x40'%>  Name:<%= @panels[1].name %><br/><%= link_to 'Change', edit_panel_path( @panels[1]) %></div></div>
+</div>
+<div id="container">
+  <div id="box-left"><h2  style="margin-left: 40px">upa-adhyaksh</h2><br/><div style="margin-left: 50px"><%= image_tag @panels[2].photo.url , :size => '40x40'%>  Name:<%= @panels[2].name %></div><br/><%= link_to 'Change', edit_panel_path( @panels[2])%> </div>&nbsp;
+  <div id="box-right" ><h2  style="margin-left: 40px"> Kosha-adhyaksha</h2><div style="margin-left: 50px"><br/><%= image_tag @panels[3].photo.url , :size => '40x40'%>Name:<%= @panels[3].name %></div><br/><%= link_to 'Change', edit_panel_path( @panels[3]) %></div>
+</div>
+
+<div id="container">
+  <div id="box-left"><h2  style="margin-left: 40px">karyawaha</h2><br/><div style="margin-left: 50px"><%= image_tag @panels[4].photo.url , :size => '40x40'%>  Name:<%= @panels[4].name %></div><br/><%= link_to 'Change', edit_panel_path( @panels[4])%> </div>&nbsp;
+  <div id="box-right" ><h2  style="margin-left: 40px">sah-karyavah</h2><div style="margin-left: 50px"><br/><%= image_tag @panels[5].photo.url , :size => '40x40'%>Name:<%= @panels[5].name %></div><br/><%= link_to 'Change', edit_panel_path( @panels[5]) %></div>
+</div>
+<h1>Members</h1>
+
+<div id="container"><div id="box-left"><%=@panels[6].detail%></div><br/><%= link_to 'Change', edit_panel_path( @panels[6]) %></div>
+</div>
+<style>
+  #container {
+    display: table;
+    table-layout: fixed;
+  }
+  #box-right, #box-left {
+    display: table-cell;
+    float: none;
+    background-color: #F2F6F7;
+    box-shadow: 10px 10px 5px #888888;
+
+  }
+  #box-left {
+    /* no width */
+    max-width:100%;
+  }
+  #box-right {
+    max-width:100%;
+  }
+</style>

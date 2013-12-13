@@ -1,0 +1,76 @@
+<style>
+.tabl{
+
+background-color: #e0b153;
+box-shadow: 10px 10px 5px #888888;
+margin-left:   150px;
+margin-right: 150px;
+padding-left: 200px;
+}
+</style>
+
+<div class="tabl"  >
+
+  <h1>Members of maharashtra mandal</h1>
+  
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/redmond/jquery-ui.css" rel="stylesheet" type="text/css" />
+<table  class="jtable">
+  <thead>
+    <tr>
+      <th>Name</th>
+           <th>Address</th>
+
+      <th>Contactno</th>
+    
+    </tr>
+  </thead>
+  
+  <tbody>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.address %></td>
+        <td><%= user.contactno %></td>
+        <%#*<td><%= link_to 'Show', user %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+</div>
+<script type="text/javascript">
+
+
+
+  $().ready(function(){
+    $(".jtable th").each(function(){
+
+      $(this).addClass("ui-state-default");
+
+    });
+    $(".jtable td").each(function(){
+
+      $(this).addClass("ui-widget-content");
+
+    });
+    $(".jtable tr").hover(
+    function()
+    {
+      $(this).children("td").addClass("ui-state-hover");
+    },
+    function()
+    {
+      $(this).children("td").removeClass("ui-state-hover");
+    }
+  );
+    $(".jtable tr").click(function(){
+
+      $(this).children("td").toggleClass("ui-state-highlight");
+    });
+
+  });
+</script>
+
+<%#= link_to 'New User', new_user_path %>

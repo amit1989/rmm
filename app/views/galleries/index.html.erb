@@ -1,0 +1,24 @@
+
+<br />
+<div class="slider1">
+
+<% @id.each_with_index do |f, index| %>
+  <div class="slide"><%= image_tag "http://farm#{@farm_id[index]}.staticflickr.com/#{@server_id[index]}/#{@id[index]}_#{@secret[index]}.jpg" %></div>
+<% end %>
+  </div>
+<script>
+  $(document).ready(function(){
+  $('.slider1').bxSlider({
+    slideWidth: 400,
+    minSlides: 2,
+    maxSlides: 2,
+    slideMargin: 5
+  });
+});
+</script>
+
+
+
+
+
+

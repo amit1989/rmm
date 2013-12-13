@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @panel.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @panel.email %>
+</p>
+
+<p>
+  <b>Designation:</b>
+  <%= @panel.designation %>
+</p>
+
+<p>
+  <b>Membershipno:</b>
+  <%= @panel.membershipno %>
+</p>
+
+<p>
+  <b>Contactno:</b>
+  <%= @panel.contactno %>
+</p>
+
+<p>
+  <b>Detail:</b>
+  <%= @panel.detail %>
+</p>
+<%= image_tag @panel.photo.url ,:size => '100x100'%>
+
+<%= link_to 'Edit', edit_panel_path(@panel) %> |
+<a href="/admin" class="menu-itemm" id="menu53" title="events" id="menu80" title="Events"><span class="menu-title">Back</span></a>
+

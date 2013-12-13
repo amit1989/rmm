@@ -1,0 +1,48 @@
+<%= form_for @panel, :html => { :multipart => true } do |f| %>
+  <% if @panel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@panel.errors.count, "error") %> prohibited this panel from being saved:</h2>
+
+      <ul>
+      <% @panel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :designation %><br />
+    <%=   f.select :designation, options_for_select(%w[working-adhyaksh karya-adhyaksh upa-adhyaksh Kosha-adhyaksha karyawaha sah-karyavah])  %>
+   
+  </div>
+  <div class="field">
+    <%= f.label :membershipno %><br />
+    <%= f.text_field :membershipno %>
+  </div>
+  <div class="field">
+    <%= f.label :contactno %><br />
+    <%= f.text_field :contactno %>
+  </div>
+  <div class="field">
+    <%= f.label :detail %><br />
+    <%= f.text_area :detail %>
+  </div>
+
+  <%= f.file_field :photo %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<%#= form_for @panel, :url => users_path, :html => { :multipart => true } do |form| %>
+
+<%# end %>
+<% end %>

@@ -1,0 +1,60 @@
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(22.070687,82.169269);
+    var mapOptions = {
+      zoom: 15,
+      center: myLatlng
+    }
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Railway maharashtra mandal!',
+      clickable: true
+    });
+
+  
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+  
+</script>
+<br/><br/></br>
+
+
+<div id="map-canvas" style="height: 400px;width:400px;padding: 15px "></div>
+<div id="box-right"><p style="padding: 25px">Railway Maharashtra Mandal Bilaspur – a non-profit organization was established in 1940 in order to foster and cherish distinctive cultural heritage of Marathi speaking people, residing in the Chhattisgarh. The main objective of this organization was to maintain Marathi culture, Indian values and the traditions by organizing musical concerts, staging dramas and various religious functions with encouraging the youth participation in various social and cultural activities. In order to transmit Marathi cultural heritage to the next generation, festivals like Gudhi Padwa, Diwali and Ganesh Utsav are celebrated by focusing on our customs, rituals and traditions
+  <p>
+  <address style="margin-left: 30px">
+    <a href="mailto:webmaster@example.com">Contact-us</a>.<br>
+    Visit us at: www.rmmbsp.org<br>
+    Tikrapara, Ramdas nagar, Bilaspur<br>
+    Chhattisgarh 495001
+  </address>
+</p>
+</p></div>
+
+
+
+<style>
+  #container {
+    display: table;
+    table-layout: fixed;
+  }
+  #box-right, #map-canvas {
+    display: table-cell;
+    float: none;
+    background-color: #F2F6F7;
+    box-shadow: 10px 10px 5px #888888;
+
+  }
+  #map-canvas {
+    /* no width */
+    max-width:100%;
+  }
+  #box-right {
+    max-width:100%;
+  }
+</style>
