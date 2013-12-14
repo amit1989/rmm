@@ -1,54 +1,10 @@
-<br/><h1 style="font-size: large; color: mediumpurple;margin-left: 40px;">पदाधिका-यांची नाव</h1>
-
-
-
-<%# @panels.each do |panel| %>
-<div id="container">
-
-  <div id="box-left"><h2 style="margin-left: 40px">अध्यक्ष</h2> <br/><div style="margin-left: 50px"><%= image_tag ('koranne.jpg') , :size => '100x100'%><br/>  <%= @panels[0].name %></div></div>&nbsp;
-
-  <div id="box-right" ><h2  style="margin-left: 40px">कार्याध्यक्ष</h2><br/><div style="margin-left: 50px"><%= image_tag ('shewalkar.jpg') , :size => '100x100'%>  <br/><%= @panels[1].name %></div></div>
-</div>
-<div id="container">
-  <div id="box-left"><h2  style="margin-left: 40px">उपाध्यक्ष</h2><br/><div style="margin-left: 50px"><%= image_tag ('joshi.jpg') , :size => '100x100'%>  <br/> <%= @panels[2].name %></div></div>&nbsp;
-  <div id="box-right" ><h2  style="margin-left: 40px">कोषाध्यक्ष</h2><div style="margin-left: 50px"><br/><%= image_tag ('banerkar.jpg') , :size => '100x100'%> <br/> <%= @panels[3].name %></div></div>
-</div>
-
-<div id="container">
-  <div id="box-left"><h2  style="margin-left: 40px">कार्यवाह</h2><br/><div style="margin-left: 50px"><%= image_tag ('bedekar.jpg') , :size => '100x100'%> <br/>  <%= @panels[4].name %></div></div>&nbsp;
-  <div id="box-right" ><h2  style="margin-left: 40px">सह कार्यवाह</h2><div style="margin-left: 50px"><br/><%= image_tag ('panse.jpg') , :size => '100x100'%><br/> <%= @panels[5].name %></div></div>
-</div>
-<h1 style="font-size: large; color: mediumpurple; margin-left: 40px;">कार्यकारिणी सदस्य</h1>
-
-<div id="container"><div id="box-left"><%=@panels[6].detail%></div></div>
-
-<h1 style="font-size: large; color: mediumpurple; margin-left: 40px;">भवन निर्माण समिति </h1>
-<div id="container">
-  <div id="box-left"><h2  style="margin-left: 40px">Dr. Prakash Ladikar</h2><br/><div style="margin-left: 50px"><%#= image_tag @panels[4].photo.url , :size => '100x100'%> <br/><%#= @panels[4].contactno %></div></div>
-   <div id="box-right" ><h2  style="margin-left: 40px">Vivek Newalkar</h2><div style="margin-left: 50px"><br/><%#= image_tag @panels[5].photo.url , :size => '100x100'%><br/><%#= @panels[5].contactno %></div></div>
-
-</div>
-<h1 style="font-size: large; color: mediumpurple;margin-left: 40px;">सदस्य</h1>
-<div id="container"><div id="box-left">सर्वश्री अनिल कोरान्ने, संजय बानेरकर, अरविंद शेवालकर, मुकुंद शेवाळकर, प्रकाश वाघ, आनंद आठवले, काशीनाथ गोरे, दिलीप डोनगाॅंवकर, पी के बी मेश्राम, नारायण आवटी, अविनाश बापटे, दत्तात्रय होनप, जयंत जोशी, गजानन फडके, एवं अनुराग पेंडलवार व नितिन बेडेकर</div></div>
-<%#*<tr>%>
-<%#*<td><%= panel.name %></td>
-<%#*<td><%= panel.email %></td>
-<%#*<td><%= panel.designation %></td>
-<%#*<td><%= panel.membershipno %></td>
-<%#*<td><%= panel.contactno %></td>
-<%#*<td><%= panel.detail %></td>
-<%#*<td><%= link_to 'Show', panel %></td>
-<%#*<td><%= link_to 'Edit', edit_panel_path(panel) %></td>
-<%#*<td><%= link_to 'Destroy', panel, confirm: 'Are you sure?', method: :delete %></td>
-<%#*</tr>%>
-<%# end %>
-<br />
-
-<%#= link_to 'New Panel', new_panel_path %>
-<style>
-  #container {
+<style type="text/css">
+  #container00 {
     display: table;
     table-layout: fixed;
+    width: 51%;
+    padding-left: 293px;
+
   }
   #box-right, #box-left {
     display: table-cell;
@@ -65,3 +21,50 @@
     max-width:100%;
   }
 </style>
+<br/><h1 style="font-size: large; color: mediumpurple;margin-left: 40px; text-align: center;">पदाधिका-यांची नाव</h1>
+
+
+
+<%# @panels.each do |panel| %>
+<div id="container00">
+
+  <div id="box-left"><h2 style="margin-left: 40px; text-align: center;">अध्यक्ष</h2> <br/><div style="margin-left: 50px"><%= image_tag ('koranne.jpg') , :size => '100x100'%><br/>  <%= @panels[0].name %></div></div>&nbsp;
+
+  <div id="box-right" ><h2  style="margin-left: 40px; text-align: center;">कार्याध्यक्ष</h2><br/><div style="margin-left: 50px"><%= image_tag ('shewalkar.jpg') , :size => '100x100'%>  <br/><%= @panels[1].name %></div></div>
+</div>
+<div id="container00">
+  <div id="box-left"><h2  style="margin-left: 40px; text-align: center;">उपाध्यक्ष</h2><br/><div style="margin-left: 50px"><%= image_tag ('joshi.jpg') , :size => '100x100'%>  <br/> <%= @panels[2].name %></div></div>&nbsp;
+  <div id="box-right" ><h2  style="margin-left: 40px; text-align: center;">कोषाध्यक्ष</h2><div style="margin-left: 50px"><br/><%= image_tag ('banerkar.jpg') , :size => '100x100'%> <br/> <%= @panels[3].name %></div></div>
+</div>
+
+<div id="container00">
+  <div id="box-left"><h2  style="margin-left: 40px; text-align: center;">कार्यवाह</h2><br/><div style="margin-left: 50px"><%= image_tag ('bedekar.jpg') , :size => '100x100'%> <br/>  <%= @panels[4].name %></div></div>&nbsp;
+  <div id="box-right" ><h2  style="margin-left: 40px; text-align: center;">सह कार्यवाह</h2><div style="margin-left: 50px"><br/><%= image_tag ('panse.jpg') , :size => '100x100'%><br/> <%= @panels[5].name %></div></div>
+</div>
+<h1 style="font-size: large; color: mediumpurple; margin-left: 40px; text-align: center;">कार्यकारिणी सदस्य</h1>
+
+<div id="container00"><div id="box-left"><%=@panels[6].detail%></div></div>
+
+<h1 style="font-size: large; color: mediumpurple; margin-left: 40px; text-align: center;">भवन निर्माण समिति </h1>
+<div id="container00">
+  <div id="box-left"><h2  style="margin-left: 40px; text-align: center;">Dr. Prakash Ladikar</h2><br/><div style="margin-left: 50px"><%#= image_tag @panels[4].photo.url , :size => '100x100'%> <br/><%#= @panels[4].contactno %></div></div>
+  <div id="box-right" ><h2  style="margin-left: 40px; text-align: center;">Vivek Newalkar</h2><div style="margin-left: 50px"><br/><%#= image_tag @panels[5].photo.url , :size => '100x100'%><br/><%#= @panels[5].contactno %></div></div>
+
+</div>
+<h1 style="font-size: large; color: mediumpurple;margin-left: 40px; text-align: center;">सदस्य</h1>
+<div id="container00"><div id="box-left">सर्वश्री अनिल कोरान्ने, संजय बानेरकर, अरविंद शेवालकर, मुकुंद शेवाळकर, प्रकाश वाघ, आनंद आठवले, काशीनाथ गोरे, दिलीप डोनगाॅंवकर, पी के बी मेश्राम, नारायण आवटी, अविनाश बापटे, दत्तात्रय होनप, जयंत जोशी, गजानन फडके, एवं अनुराग पेंडलवार व नितिन बेडेकर</div></div>
+<%#*<tr>%>
+<%#*<td><%= panel.name %>
+<%#*<td><%= panel.email %>
+<%#*<td><%= panel.designation %>
+<%#*<td><%= panel.membershipno %>
+<%#*<td><%= panel.contactno %>
+<%#*<td><%= panel.detail %>
+<%#*<td><%= link_to 'Show', panel %>
+<%#*<td><%= link_to 'Edit', edit_panel_path(panel) %>
+<%#*<td><%= link_to 'Destroy', panel, confirm: 'Are you sure?', method: :delete %>
+<%#*</tr>%>
+<%# end %>
+<br />
+
+<%#= link_to 'New Panel', new_panel_path %>
