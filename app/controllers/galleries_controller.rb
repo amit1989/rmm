@@ -8,9 +8,8 @@ class GalleriesController < ApplicationController
     require "net/http"
     require "uri"
     require "json"
-
-    uri = URI.parse("http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=4919cdec9d88e4f57bac95596bdf2c4c&user_id=111235303@N04&format=json&nojsoncallback=1")
-    response = Net::HTTP.get_response(uri)
+ uri = URI.parse("http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=8a3321feea154f26712db5b2d741604b&user_id=111718478@N08&format=json&nojsoncallback=1")
+        response = Net::HTTP.get_response(uri)
     response.body
     string = response.body
     parsed = JSON.parse(string)
