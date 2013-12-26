@@ -6,24 +6,65 @@
 
     <div class="ja-innerpad">
       <div class="moduletable">
+        <style type="text/css">
+
+          #marqueecontainer{
+            position: relative;
+            width: 165px; /*marquee width */
+            height: 200px; /*marquee height */
+            background-color: white;
+            overflow: hidden;
+            border: 3px solid orange;
+            padding: 2px;
+            padding-left: 4px;
+          }
+
+        </style>
+
         <script type="text/javascript">
-          var tc_speed = 100 // speed
-          var tc_time = 3000 // pause time
 
-          var pausecontent=new Array()
+          /***********************************************
+           * Cross browser Marquee II- © Dynamic Drive (www.dynamicdrive.com)
+           * This notice MUST stay intact for legal use
+           * Visit http://www.dynamicdrive.com/ for this script and 100s more.
+           ***********************************************/
 
+          var delayb4scroll=2000 //Specify initial delay before marquee starts to scroll on page (2000=2 seconds)
+          var marqueespeed=2 //Specify marquee scroll speed (larger is faster 1-10)
+          var pauseit=1 //Pause marquee onMousever (0=no. 1=yes)?
 
+          ////NO NEED TO EDIT BELOW THIS LINE////////////
 
-          <%#*pausecontent[0] = '<div class="contentheading"><a href="#">वर्तमान कार्यक्रम</a></div><font face="Arial, Helvetica, sans-serif" size="2"><span style="line-height: 23px">-</span></font><div><a href="/events">Read more...<br></a></div>'%>
-          //x++
+          var copyspeed=marqueespeed
+          var pausespeed=(pauseit==0)? copyspeed: 0
+          var actualheight=''
 
-          pausecontent[0] = '<div class="contentheading"><a href="/donations">देणगी सूची</a></div><font face="Arial, Helvetica, sans-serif" size="2"><span style="line-height: 23px">-</span></font>'
-          pausecontent[1] = '<div class="contentheading" onclick="OpenInNewTab();">छत्तीसगढ पर्यटन</div ><p style="text-align: justify"><font size="3" color="#444444"><span style="line-height: 24px"><strong> </strong></span></font></p><div onclick="OpenInNewTab();">Read more...<br></div>'
-          //x++
+          function scrollmarquee(){
+            if (parseInt(cross_marquee.style.top)>(actualheight*(-1)+8)) //if scroller hasn't reached the end of its height
+              cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed+"px" //move scroller upwards
+            else //else, reset to original position
+              cross_marquee.style.top=parseInt(marqueeheight)+8+"px"
+          }
 
-         
+          function initializemarquee(){
+            cross_marquee=document.getElementById("vmarquee")
+            cross_marquee.style.top=0
+            marqueeheight=document.getElementById("marqueecontainer").offsetHeight
+            actualheight=cross_marquee.offsetHeight //height of marquee content (much of which is hidden from view)
+            if (window.opera || navigator.userAgent.indexOf("Netscape/7")!=-1){ //if Opera or Netscape 7x, add scrollbars to scroll and exit
+              cross_marquee.style.height=marqueeheight+"px"
+              cross_marquee.style.overflow="scroll"
+              return
+            }
+            setTimeout('lefttime=setInterval("scrollmarquee()",30)', delayb4scroll)
+          }
 
-          new pausescroller(pausecontent, "tcscroller", tc_time, tc_speed)
+          if (window.addEventListener)
+            window.addEventListener("load", initializemarquee, false)
+          else if (window.attachEvent)
+            window.attachEvent("onload", initializemarquee)
+          else if (document.getElementById)
+            window.onload=initializemarquee
 
           function OpenInNewTab(url )
           {
@@ -31,7 +72,25 @@
             var win=window.open("http://www.chhattisgarhtourism.net/", '_blank');
             win.focus();
           }
+
+
         </script>
+
+        <%#*<div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">%>
+          <%#*<div id="vmarquee" style="position: absolute; width: 98%;">%>
+
+            <!--YOUR SCROLL CONTENT HERE-->
+            <div class="contentheading"><a href="/donations">देणगी सूची</a></div><font face="Arial, Helvetica, sans-serif" size="3"><span style="line-height: 23px">-</span></font>
+
+
+
+            <!--YOUR SCROLL CONTENT HERE-->
+            <div class="contentheading" onclick="OpenInNewTab();">छत्तीसगढ पर्यटन</div ><p style="text-align: justify"><font size="3" color="#444444"><span style="line-height: 24px"><strong> </strong></span></font></p>
+
+          <%#*</div>%>
+        <%#*</div>%>
+
+
 <%#*<div id="tcscroller" class="noclass" style="position: relative; overflow: hidden"><div class="innerDiv" style="position: absolute; width: 137px; top: 72px;" id="tcscroller1"><div class="contentheading"><a href="http://www.mmbangalore.org.in/index.php?option=com_content&view=article&task=view&id=81&Itemid=80">????? -</a></div><font face="Arial, Helvetica, sans-serif" size="2"><span style="line-height: 23px">-</span></font><div><a href="http://www.mmbangalore.org.in/index.php?option=com_content&view=article&task=view&id=81&Itemid=80">Read more...<br></a></div></div><div class="innerDiv" style="position: absolute; width: 137px; visibility: visible; top: -135px;" id="tcscroller2"><div class="contentheading"><a href="http://www.mmbangalore.org.in/index.php?option=com_content&view=article&task=view&id=73&Itemid=80">???? ??????</a></div><p style="text-align: justify"><font size="3" color="#444444"><span style="line-height: 24px"><strong>&nbsp;</strong></span></font></p><div><a href="http://www.mmbangalore.org.in/index.php?option=com_content&view=article&task=view&id=73&Itemid=80">Read more...<br></a></div></div></div>%>
       </div>
     </div>
@@ -47,25 +106,38 @@
       </p> <%=image_tag('img1.jpg', :width =>'600')%>
       <p>रेल्वें महाराश्ट्र मंडळ, रामदासनगर बिलासपुर च्या सर्व साधारण सभेत अर्थात्च दिनांक 16.12.2007 रोजी आयोजित बैठकीत उपस्थित सदस्यां नी सर्वानुमतेन वर्तमान भवनाचा जीर्णोद्वार करून सर्वसुविधा युक्त तीन मजली इमारत बांधण्याचा प्रस्ताव पास करण्यात आला। कारण कि म्डळाची जूनी वास्तु 50 वर्शांन पेक्षा जास्तीस जुनी होती। हया कारणाने जूना भवनाचे जीर्णोदार करणे आवश्यक होते। </p>
       <p>माननीय विधायक व मंत्री छत्तीसगढ षासन श्री अमर अग्रवाल ह्यानी 20 लाख षासना कडून उपलब्ध करूण दिले आणि त्या सोबत मंडळाच्या सभासदांनी देणगी देउन तसेच काही अमराठी व्यक्ति मत्वांचा सहयोगा ने नवीन सभागृहाचे निर्माण पूर्ण करण्यात आले आणि विधिवत लोकार्पण दिनांक  28.08.2011 रोजी माननीय श्री अमर अग्रवाल ह्यांच्या हस्ते करण्यात आले। त्वरीत बांधकामा साठी भवन निर्माण प्रमुख व अघ्यक्ष भवन निर्माण समिति डाॅं प्रकाष लाडीकर व श्री विवेक नेवाळकर वास्तुविद् ह्यांनी स्वतहुन बांधकाम पूर्ण करण्या करीता खूव मेहनत धेतली आणि त्या करीता या ठिकानी त्यांचे आभार व्यक्त करने आवष्यक वाटते।</p>
-     
+
     </div>
   </div>
   <div id="ja-col2">
     <div class="ja-innerpad">
       <h4>कार्यक्रम</h4>
-      <%events = Event.all%>
-      <% events.each do |event| %>
 
-        <ul>
-          <li ><p><%= image_tag('new.gif', :size => '25x25') if date_diff_valid(event) == true %><%= event.detail %></p></li>
-        </ul>
-    
-      <%end%>
+      <div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
+        <div id="vmarquee" style="position: absolute; width: 98%;">
 
-      <div style="margin-left: -14px; margin-top: 100px">
+          <!--YOUR SCROLL CONTENT HERE-->
+
+          <%events = Event.all%>
+          <% events.each do |event| %>
+
+            <ul>
+              <li ><p><%= image_tag('new.gif', :size => '20x20') if date_diff_valid(event) == true %><a href="/events"><%= event.detail %></a></p></li>
+            </ul>
+
+          <%end%>
+
+          <!--YOUR SCROLL CONTENT HERE-->
+
+        </div>
+      </div>
+
+
+
+      <div style="margin-left: -14px; margin-top: 10px">
         <%= image_tag('add1.jpg', :size => '180x180') %>
       </div>
-       <div style="margin-left: -14px; margin-top: 15px">
+      <div style="margin-left: -14px; margin-top: 15px">
         <%= image_tag('add2.jpg', :size => '180x180') %>
       </div>
     </div>
